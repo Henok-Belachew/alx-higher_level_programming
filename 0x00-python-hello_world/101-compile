@@ -1,2 +1,4 @@
-#!/bin/bash
-python3 -m compileall "$PYFILE" -b
+#!/usr/bin/python3
+str = "Holberton School"
+print(str + str + str)
+print(str[:9])
