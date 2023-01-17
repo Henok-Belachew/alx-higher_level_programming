@@ -1,55 +1,49 @@
 #!/usr/bin/python3
+
+"""This module defines a square
+It inherits from the ``Rectangle`` class in rectangle.py
 """
-This module implements a Square object
-"""
+
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square implementation"""
+    """defines a square"""
 
-    def __init__(self, size: int, x=0, y=0, id=None):
-        """initialization
-        """
+    def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
-        self.__size = size
+
+    def __str__(self):
+        """updates the string representation of a square
+
+        Returns:
+            the string representation of a square
+        """
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    def to_dictionary(self):
+        """returns a dictionary representation of a square"""
+        return {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
 
     @property
-    def size(self) -> int:
-        """size getter
-        """
-        return self.__size
+    def size(self):
+        """gets the size attribute of a sqquare"""
+        return self.width
 
     @size.setter
-    def size(self, value: int):
-        """size setter
-        """
-        self.__size = value
-        self.width = self.height = value
-
-    def __str__(self) -> str:
-        """string representation"""
-        id = self.id
-        size = self.__size
-        x = self.x
-        y = self.y
-        return "[Square] ({}) {}/{} - {}".format(id, x, y, size)
+    def size(self, value):
+        """sets the size attribute of a sqquare"""
+        self.validate_attr(value, "width", 1)
+        self.width = value
 
     def update(self, *args, **kwargs):
-        """update arguments"""
-        attr = ['id', 'size', 'x', 'y']
-        if args:
-            for at, numb in zip(attr, args):
-                setattr(self, at, numb)
-        elif kwargs:
-            for key, value in kwargs.items():
-                if key in attr:
-                    setattr(self, key, value)
+        """updates the attributes of a rectangle instance"""
 
-    def to_dictionary(self) -> dict:
-        """square to dictionary"""
-        id = self.id
-        size = self.__size
-        x = self.x
-        y = self.y
-        return {'id': id, 'x': x, 'size': size, 'y': y}
+        i = 0
+        if kwargs and len(kwargs) > 0:
+            for arg_name, arg in kwargs.items():
+                setattr(self, arg_name, arg)
+        attr = ("id", "size", "x", "y")
+        for arg in args:
+            setattr(self, attr[i], arg)
+            i += 1
