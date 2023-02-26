@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
-for x in range(0, 10):
-    for y in range(0, 10):
-        if x == 9 and y == 9:
-            print("{}{}".format(x, y))
-            break
-        print("{}{}".format(x, y), end=", ")
+for i in range(0, 100):
+    if i == 99:
+        print("{}".format(i))
+    else:
+        print("{:0>2d}, ".format(i), end="")
