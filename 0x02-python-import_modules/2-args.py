@@ -10,4 +10,11 @@ if __name__ == '__main__':
         ending = "argument:"
     else:
         ending = "arguments:"
+
+    # Displaying the number of arguments passed
     print("{} {}".format(totalArgs, ending))
+
+    # Printing all the arguments
+
+    for i in range(1, len(argv)):
+        print("{} {}".format(i, argv[i]))
