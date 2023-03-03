@@ -11,12 +11,13 @@ operators = ["+", "-", "*", "/"]
 
 if __name__ == "__main__":
 
-    a = int(argv[1])
-    b = int(argv[3])
     if len(argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         quit(1)
     else:
+        a = int(argv[1])
+        b = int(argv[3])
+
         if argv[2] == "+":
             print("{:d} {} {:d} = {:d}".format(a, argv[2], b, add(a, b)))
         elif argv[2] == "-":
