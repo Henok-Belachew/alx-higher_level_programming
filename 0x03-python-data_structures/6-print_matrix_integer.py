@@ -3,8 +3,8 @@
 
 def print_matrix_integer(matrix=[[]]):
 
-    if len(matrix) == 1 or len(matrix) == 0:
-        print('')
+    if not matrix:
+        print()
     for m in range(0, len(matrix)):
         for n in range(0, len(matrix[m])):
             sepa = "\n" if n + 1 == len(matrix[m]) else " "
