@@ -4,7 +4,7 @@
     Defining square class
 """
 class square:
-    """
-        A class that do nothing
+    """ Square
+        A class that does nothing
     """
     pass
