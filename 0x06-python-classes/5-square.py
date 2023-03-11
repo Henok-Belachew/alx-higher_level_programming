@@ -31,7 +31,7 @@ class Square:
 
     def my_print(self):
         if self.__size == 0:
-            print(" ")
+            print("")
             return(1)
         for y in range(self.__size):
             for x in range(self.__size):
