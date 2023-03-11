@@ -9,7 +9,7 @@ class Square:
     """
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
-        sel.f__position = position
+        self.__position = position
         if type(size) != int:
             raise TypeError('size must be an integer')
         elif size < 0:
