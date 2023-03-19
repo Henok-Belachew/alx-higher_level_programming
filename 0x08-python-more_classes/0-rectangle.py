@@ -2,6 +2,7 @@
 """ 0-rectangel : module
 """
 
+
 class Rectangle:
     """ Sekeleton for Rectangle Class
     """
