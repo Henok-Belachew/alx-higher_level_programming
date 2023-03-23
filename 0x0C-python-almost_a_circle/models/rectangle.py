@@ -100,3 +100,8 @@ class Rectangle(Base):
             print("#" * self.width)
             if i == self.height:
                 print()
+
+    def __str__(self):
+        str1 = "[Rectangle] ({}) {}/".format(self.id, self.x)
+        str2 = "{} = {}/{}".format(self.y, self.width, self.height)
+        return (str1 + str2)
