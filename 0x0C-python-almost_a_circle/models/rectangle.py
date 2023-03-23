@@ -98,4 +98,4 @@ class Rectangle(Base):
         """Prints the rectangle instace"""
         for i in range(self.height):
             print("#" * self.width)
-            print()
+        print()
