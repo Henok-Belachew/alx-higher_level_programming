@@ -109,3 +109,11 @@ class Rectangle(Base):
         str1 = "[Rectangle] ({}) {}/".format(self.id, self.x)
         str2 = "{} - {}/{}".format(self.y, self.width, self.height)
         return (str1 + str2)
+
+    def update(self, *args):
+        """Variable length argument"""
+        i = 0
+        attr = ("id", "width", "height", "x", "y")
+        for arg in args:
+            setattr(self, attr[i], arg)
+            i += 1
