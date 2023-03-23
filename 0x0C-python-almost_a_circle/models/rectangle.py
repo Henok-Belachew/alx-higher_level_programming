@@ -15,6 +15,11 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes an instance of a rectangle"""
 
+        Rectangle.validate_attr(value, "width")
+        Rectangle.validate_attr(value, "height")
+        Rectangle.validate_attr(value, "x")
+        Rectangle.validate_attr(value, "y")
+
         super().__init__(id)
         self.__width = width
         self.__height = height
