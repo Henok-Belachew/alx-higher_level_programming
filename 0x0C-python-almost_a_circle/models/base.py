@@ -14,7 +14,7 @@ class Base:
             id(int): the id of instance objects
         """
         if not id:
-            Base.__nb_objects += 0
+            Base.__nb_objects += 1
             self.id = Base.__nb_objects
         else:
             self.id = id
