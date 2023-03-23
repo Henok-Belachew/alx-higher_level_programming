@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+"""This module defines a base class"""
+
+
 class Base:
     """Defines a base object"""
     __nb_objects = 0
