@@ -21,6 +21,18 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def validate_attr(value, name):
+        """Validates Attributes"""
+
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if name == "width" or name == "height":
+            if value <= 0:
+                raise ValueError("{} must be > 0".format(name))
+        if name == "x" or name == "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(name))
+
     @property
     def width(self):
         """Getter for Width"""
@@ -30,6 +42,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setter for Width"""
+        Rectangle.validate_attr(value, "width")
 
         self.__width = value
 
@@ -42,6 +55,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Setter for height"""
+        Rectangle.validate_attr(value, "height")
 
         self.__height = value
 
@@ -54,6 +68,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Setter for x"""
+        Rectangle.validate_attr(value, "x")
 
         self.__x = value
 
@@ -66,5 +81,6 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Setter for Y"""
+        Rectangle.validate_attr(value, "y")
 
         self.__y = value
