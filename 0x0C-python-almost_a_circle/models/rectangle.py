@@ -96,7 +96,11 @@ class Rectangle(Base):
 
     def display(self):
         """Prints the rectangle instace"""
+        for y in range(self.y):
+            print()
         for i in range(self.height):
+            for x in range(self.x):
+                print(" ", end="")
             print("#" * self.width)
             if i == self.height:
                 print()
