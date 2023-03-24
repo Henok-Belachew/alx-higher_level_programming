@@ -110,8 +110,13 @@ class Rectangle(Base):
         str2 = "{} - {}/{}".format(self.y, self.width, self.height)
         return (str1 + str2)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Variable length argument"""
+
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+            return
         i = 0
         attr = ("id", "width", "height", "x", "y")
         for arg in args:
