@@ -124,6 +124,7 @@ class Rectangle(Base):
             i += 1
 
     def to_dictionary(self):
+        """to dictionary conversion"""
         dct = {
                 "id": self.id,
                 "width": self.width,
