@@ -122,3 +122,12 @@ class Rectangle(Base):
         for arg in args:
             setattr(self, attr[i], arg)
             i += 1
+
+    def to_dictionary(self):
+        dct = {
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y}
+        return dct
