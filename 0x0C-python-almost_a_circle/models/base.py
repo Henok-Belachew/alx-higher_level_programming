@@ -62,8 +62,8 @@ class Base:
         filename = cls.__name__ + ".json"
         try:
             with open(filename, 'r') as theFile:
-                pythList = cls.from_json_string(theFile.read())
-                newObjs = [Base.create(**obj) for obj in pythList]
+                pythList = Base.from_json_string(theFile.read())
+                newObjs = [cls.create(**obj) for obj in pythList]
                 return newObjs
         except FileNotFoundError:
             return []
